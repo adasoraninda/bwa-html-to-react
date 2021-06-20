@@ -8,6 +8,7 @@ import ListsPricing from "elements/ListsPricing";
 import Header from "parts/Header";
 import Clients from "parts/Clients";
 import Feature from "parts/Feature";
+import Footer from "parts/Footer";
 
 import HeroImage from "assets/images/hero-image.png";
 
@@ -237,6 +238,7 @@ export default function Homepage() {
           </div>
         </Section>
       </main>
+      <Footer />
     </div>
   );
 }
