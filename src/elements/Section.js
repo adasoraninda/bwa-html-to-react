@@ -13,6 +13,6 @@ export default function Section(props) {
 }
 
 Section.PropTypes = {
-  isCenteredContent: PropTypes.bool,
   className: PropTypes.string,
+  isCenteredContent: PropTypes.bool,
 };

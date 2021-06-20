@@ -8,6 +8,10 @@ export default function Button(props) {
     className.push("button-primary");
   }
 
+  if (props.isBlock) {
+    className.push("button-block");
+  }
+
   if (props.isWideMobile) {
     className.push("button-wide-mobile");
   }
@@ -23,4 +27,5 @@ Button.PropTypes = {
   isPrimary: PropTypes.bool,
   isWideMobile: PropTypes.bool,
   isSmall: PropTypes.bool,
+  isBlock: PropTypes.bool,
 };

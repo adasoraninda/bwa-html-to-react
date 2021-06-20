@@ -2,6 +2,9 @@ import React from "react";
 import { Fade } from "react-awesome-reveal";
 
 import Section from "elements/Section";
+import Button from "elements/Button";
+import Card from "elements/Card";
+import ListsPricing from "elements/ListsPricing";
 import Header from "parts/Header";
 import Clients from "parts/Clients";
 import Feature from "parts/Feature";
@@ -34,6 +37,90 @@ export default function Homepage() {
         "A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.",
       imgSrc: FeatureImage3,
       imgAlt: "Feature tile icon 03",
+    },
+  ];
+
+  const listsPricing = [
+    {
+      price: 27,
+      currencySymbol: "$",
+      description: "Lorem ipsum dolor is amet",
+      features: [
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: false,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: false,
+          content: "Excepteur sint occaecat velit",
+        },
+      ],
+    },
+    {
+      price: 47,
+      currencySymbol: "$",
+      description: "Lorem ipsum dolor is amet",
+      features: [
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: false,
+          content: "Excepteur sint occaecat velit",
+        },
+      ],
+    },
+    {
+      price: 67,
+      currencySymbol: "$",
+      description: "Lorem ipsum dolor is amet",
+      features: [
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+        {
+          isChecked: true,
+          content: "Excepteur sint occaecat velit",
+        },
+      ],
     },
   ];
 
@@ -90,6 +177,61 @@ export default function Homepage() {
                     ></Feature>
                   );
                 })}
+              </div>
+            </div>
+          </div>
+        </Section>
+        <Section className="pricing">
+          <div className="container">
+            <div className="pricing-inner section-inner has-top-divider">
+              <div className="section-header center-content">
+                <div className="container-xs">
+                  <h2 className="mt-0 mb-16">Simple, transarent pricing</h2>
+                  <p className="m-0">
+                    Lorem ipsum is common placeholder text used to demonstrate
+                    the graphic elements of a document or visual presentation.
+                  </p>
+                </div>
+              </div>
+              <div className="tiles-wrap">
+                {listsPricing.map((item, index) => (
+                  <Card key={index} hasShadow>
+                    <div className="pricing-item-content">
+                      <div className="pricing-item-header pb-24 mb-24">
+                        <div className="pricing-item-price mb-4">
+                          <span className="pricing-item-price-currency h2">
+                            {item.currencySymbol}
+                          </span>
+                          <span
+                            className="pricing-item-price-amount h1 pricing-switchable"
+                            data-pricing-monthly="34"
+                            data-pricing-yearly="27"
+                          >
+                            {item.price}
+                          </span>
+                        </div>
+                        <div className="text-xs text-color-low">
+                          {item.description}
+                        </div>
+                      </div>
+                      <div className="pricing-item-features mb-40">
+                        <div className="pricing-item-features-title h6 text-xs text-color-high mb-24">
+                          What’s included
+                        </div>
+                        <ListsPricing
+                          className="pricing-item-features-list mb-32"
+                          data={item.features}
+                          isSmall
+                        />
+                      </div>
+                    </div>
+                    <div class="pricing-item-cta mb-8">
+                      <Button isPrimary isBlock>
+                        Start free trial
+                      </Button>
+                    </div>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
